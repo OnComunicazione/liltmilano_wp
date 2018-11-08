@@ -28,13 +28,13 @@
 define('DB_NAME', 'liltmilano_wp');
 
 /** Nome utente del database MySQL */
-define('DB_USER', 'root');
+define('DB_USER', 'lilt');
 
 /** Password del database MySQL */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'lilt');
 
 /** Hostname MySQL  */
-define('DB_HOST', 'localhost');
+define('DB_HOST', '192.168.64.2:3306');
 
 /** Charset del Database da utilizzare nella creazione delle tabelle. */
 define('DB_CHARSET', 'utf8');
