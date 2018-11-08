@@ -564,3 +564,12 @@ body.colors-dark,
 	}
 
 }
+
+.nf-field-element textarea {
+    height: 200px;
+    background-color: aquamarine;
+}
+
+body{
+	background-color: rgb(187, 99, 120)
+}
