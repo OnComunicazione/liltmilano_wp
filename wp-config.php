@@ -25,16 +25,16 @@
 
 // ** Impostazioni MySQL - È possibile ottenere queste informazioni dal proprio fornitore di hosting ** //
 /** Il nome del database di WordPress */
-define('DB_NAME', 'liltmilano_wp');
+define('DB_NAME', 'oncom350_lilt');
 
 /** Nome utente del database MySQL */
-define('DB_USER', 'lilt');
+define('DB_USER', 'oncom350_lilt');
 
 /** Password del database MySQL */
-define('DB_PASSWORD', 'lilt');
+define('DB_PASSWORD', 'ON_2018/9!');
 
 /** Hostname MySQL  */
-define('DB_HOST', '192.168.64.2:3306');
+define('DB_HOST', '109.73.170.66');
 
 /** Charset del Database da utilizzare nella creazione delle tabelle. */
 define('DB_CHARSET', 'utf8');
@@ -79,7 +79,9 @@ $table_prefix  = 'wp_';
  * È fortemente raccomandato agli svilupaptori di temi e plugin di utilizare
  * WP_DEBUG all’interno dei loro ambienti di sviluppo.
  */
-define('WP_DEBUG', false);
+define('WP_DEBUG', true);
+define('WP_DEBUG_LOG', true );
+
 
 /* Finito, interrompere le modifiche! Buon blogging. */
 
