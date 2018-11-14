@@ -1,0 +1,484 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.nopad {
+  padding: 0 !important;
+  overflow: hidden;
+}
+.nomargin {
+  margin: 0 ;
+}
+
+.pad-left-15 {
+  padding-left: 15px !important;
+}
+
+/* ........... database .............*/
+
+.db .logo {
+  margin: 46px 60px;
+  width: 313px;
+}
+
+.db .row {
+  padding-left: 80px;
+  padding-right: 95px;
+}
+
+.db .title-paragrafo {
+  margin-bottom: 0;
+}
+
+.db .formBtn {
+  width: 220px;
+  margin-top: 0;
+}
+
+.pad {
+  width: 64px;
+}
+
+.db table {
+  margin-top: 60px;
+  width: 100%;
+}
+.db tbody {
+  overflow: scroll;
+  height: 80vh;
+}
+.db table th, .db table td {
+  padding: 15px;
+  opacity: 1;
+}
+.db table th {
+  padding-bottom: 30px;
+}
+.db table td {
+  font-family: Arial;
+  letter-spacing: 0.02em;
+}
+.db tbody tr:nth-child(odd){
+  background-color: #f5f5f5;
+}
+
+.pag {
+  margin-top: 50px;
+}
+.pag .city {
+  text-transform: none;
+  opacity: 1;
+  letter-spacing: 0.1em;
+  font-size: 16px;
+}
+.pag .city.active {
+  color: #ea1729;
+}
+
+.pagination {
+  justify-content: flex-end;
+}
+.pagination h1 {
+  cursor: pointer;
+  transition: .15s;
+}
+.pagination h1:hover {
+  opacity: 0.6;
+}
+.pagination img {
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+  margin-top: 9px;
+  cursor: pointer;
+  transition: .15s;
+}
+.pagination img:first-child {
+  transform: rotate(180deg)
+}
+.pagination img:hover {
+  opacity: 0.6;
+}
+.pagination img.inactive {
+  opacity: 0.4;
+  cursor: default;
+}
+.pagination img.inactive:hover {
+  opacity: 0.4;
+}
+
+
+/* ........... login .............*/
+
+.login .logo {
+  margin: 60px auto;
+}
+
+/* ........... cookie policy .............*/
+.privacy-box {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(33, 33, 33);
+  color: rgb(255, 255, 255);
+  z-index: 50;
+  padding: 25px;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+.delete-icon-cookie {
+  width: 14px;
+  height: 14px;
+  /* margin-top: -22px;
+  margin-right: -20px; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  float: right;
+  background-image: url('./images/delete_w.svg');
+  transition: 0.2s;
+}
+.delete-icon-cookie:hover {
+  opacity: 0.5;
+}
+
+
+/* ........... footer .............*/
+.footer {
+  background-color: #121212;
+  padding-bottom: 30px;
+  padding-left: 65px;
+  padding-right: 65px;
+  padding-top: 30px;
+  height: 130px;
+  color: #fff;
+  font-family: Arial;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.footer a {
+  color: #fff;
+  transition: 0.2s;
+}
+.footer a:hover {
+  opacity: 0.4;
+  color: #fff;
+}
+.footer-left {
+  float: left;
+}
+.ragionesociale {
+  font-size: 13px;
+  letter-spacing: 0.03em;
+}
+.ragionesociale.linkmenu {
+  margin-left: 30px;
+  font-size: 15px;
+}
+.righetta {
+  width: 1px;
+  height: 25px;
+  background-color: rgba(255, 255, 255, 0.4);
+  margin-left: 30px;
+  margin-top: -2px;
+}
+.numero-icon {
+  width: 19px;
+  height: 30px;
+  margin-right: 13px;
+  margin-left: 30px;
+  margin-top: -3px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  float: left;
+  background-image: url('./images/phone.svg');
+}
+.numero {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.025em;
+  margin-top: -3px;
+}
+.social-icon {
+  width: 22px;
+  height: 22px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  float: right;
+  margin-left: 25px;
+  transition: 0.2s;
+}
+.social-icon:hover {
+  opacity: 0.4;
+}
+.ig {
+  background-image: url('./images/ig.svg');
+}
+.yt {
+  background-image: url('./images/yt.svg');
+}
+.fb {
+  background-image: url('./images/fb.svg');
+}
+.tw {
+  background-image: url('./images/tw.svg');
+}
+/* ........................*/
+
+
+
+
+.logo.page2 {
+  margin-bottom: 69px;
+  width: 373px;
+  height: 122px;
+}
+
+h1.title-paragrafo {
+  margin-bottom: 25px;
+  font-size: 38px;
+}
+
+h1.title-top {
+  font-size: 25px;
+  line-height: 1.3;
+  margin-top: 10px
+}
+
+.city {
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.3;
+  margin-top: 10px;
+  opacity: 0.6;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+h1.title-paragrafo.white {
+  margin-top: 40px;
+}
+
+.background-grey.container-form-prenotazione.page2 {
+  padding-top: 313px;
+  height: auto;
+}
+
+.paragrafo {
+  font-size: 17px;
+  font-family: Arial;
+  width: 85%;
+  letter-spacing: 0.015em;
+  line-height: 24px;
+  margin-bottom: 50px;
+}
+
+.paragrafo-puntato {
+  font-size: 17px;
+  font-family: Arial;
+  width: 62%;
+  letter-spacing: 0.015em;
+  margin-left: 39px;
+  line-height: 24px;
+  margin-bottom: 23px;
+}
+
+.paragrafo-puntato::before {
+  content: "";
+  height: 12px;
+  width: 15px;
+  display: block;
+  position: absolute;
+  margin-left: -36px;
+  margin-top: 5px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('./images/arrow.svg');
+}
+
+.list-icon {
+  width: 32px;
+  height: 50px;
+  margin-top: -9px;
+  margin-right: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  float: left;
+}
+.list-icon.visite {
+  background-image: url('./images/visite.svg');
+}
+.list-icon.esami {
+  background-image: url('./images/esami.svg');
+}
+
+.list-title {
+  font-family: 'futura-pt-bold', Arial, Helvetica, sans-serif!important;
+  font-weight: 500;
+  font-size: 21px;
+  margin-bottom: 27px;
+  display: inline-block;
+}
+
+.paragrafo.bot {
+  width: 75%;
+}
+
+.paragrafo-puntato.list {
+  margin-bottom: 10px;
+}
+
+.img-left {
+  width: 74%;
+  margin-top: 60px;
+  height: 255px;
+  margin-left: -65px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('./images/imgleft.jpg');
+}
+
+.col-bot {
+  padding-left: 65px !important;
+}
+
+.col-bot .title-paragrafo {
+  margin-top: 40px;
+}
+
+.metro {
+  display: inline-block;
+  /* margin-top: 40%; */
+  margin-right: 28px;
+  height: 20px;
+  width: 29px;
+  border-radius: 4px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.m1 {
+  background-image: url('./images/m1.png');
+}
+.m2 {
+  background-image: url('./images/m2.png');
+}
+.fs {
+  background-image: url('./images/fs.png');
+}
+
+.paragrafo-metro {
+  display: inline-block;
+  font-size: 16px;
+  width: 89%;
+  line-height: 23px;
+}
+
+.background-black {
+  background-color: #272727;
+  /* padding-left: 50px !important; */
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.background-black .scritta-sito {
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.08em;
+}
+.background-black .freccia-sito {
+    background-image: url(./images/arrow_w.svg);
+}
+
+.img-right {
+  width: 118%;
+  height: 333px;
+  margin-left: -50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('./images/outside.jpg');
+}
+
+.firstrowSpazio {
+  margin-left: 0;
+}
+.firstrowSpazio .paragrafo {
+  margin-bottom: 45px;
+}
+
+/* ....................................MEDIA QUERIES..................................... */
+
+@media (max-width: 992px) {
+  .pad-left-15 .col-lg-7.left-col {
+    overflow: hidden;
+  }
+  .background-grey.container-form-prenotazione.page2 {
+    padding-top: 60px;
+    padding-left: 80px;
+    padding-bottom: 51px;
+  }
+  .paragrafo {
+    margin-bottom: 0;
+  }
+  .img-left {
+    width: 133%;
+  }
+  .col-lista {
+    margin-top: 27px;
+  }
+  .col-bot {
+    padding-bottom: 23px;
+  }
+}
+
+@media (max-width: 620px) {
+  .pad-left-15 .paragrafo-puntato {
+    width: 92%;
+  }
+  .pad-left-15 .paragrafo, .paragrafo.bot {
+    width: 92%;
+  }
+}
+
+@media (max-width: 520px) {
+  .logo.page2 {
+    margin-bottom: 108px;
+  }
+  .img-left {
+    margin-top: 28px;
+  }
+  .background-grey.container-form-prenotazione.page2 {
+    padding-top: 28px;
+    padding-left: 40px;
+    padding-bottom: 28px;
+  }
+  /* .background-black {
+    padding-left: 25px !important;
+  } */
+  h1.title-paragrafo.white {
+    margin-top: 29px;
+  }
+  .col-bot {
+    padding-left: 25px !important;
+  }
+  .col-bot .title-paragrafo {
+    margin-top: 28px;
+  }
+  .paragrafo {
+    font-size: 16px;
+  }
+  .paragrafo-metro {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+}

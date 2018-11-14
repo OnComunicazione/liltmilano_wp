@@ -47,4 +47,14 @@ function get_submissions() {
 
 
 
+
+// function additional_custom_styles() {
+//
+//     /*Enqueue The Styles*/
+//     wp_enqueue_style( 'uniquestylesheetid', get_template_directory_uri() . '/style.css' );
+//     wp_enqueue_style( 'uniquestylesheetid', get_template_directory_uri() . '/style2.css' );
+// }
+// add_action( 'wp_enqueue_scripts', 'additional_custom_styles' );
+//
+
 ?>

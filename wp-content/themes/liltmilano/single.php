@@ -12,19 +12,12 @@
 
 get_header(); ?>
 
-	<div>
-		<?php
-		/* Start the Loop */
-		while ( have_posts() ) : the_post();
-
-			the_content();
-
-		endwhile; // End of the loop.
-		?>
-	</div>
 <?php
-
+/* Start the Loop */
+while ( have_posts() ) : the_post();
+	the_content();
+endwhile; // End of the loop.
 ?>
-	<?php get_sidebar(); ?>
+
 
 <?php get_footer();

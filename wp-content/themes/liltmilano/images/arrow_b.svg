@@ -1,0 +1,12 @@
+<svg id="right-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.312 15.851">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #363636;
+      }
+    </style>
+  </defs>
+  <g id="Group_1" data-name="Group 1">
+    <path id="Path_1" data-name="Path 1" class="cls-1" d="M110.538,7.307,103.484.253a.869.869,0,0,0-1.226,0l-.519.519a.868.868,0,0,0,0,1.226l5.923,5.923-5.93,5.93a.869.869,0,0,0,0,1.226l.519.519a.869.869,0,0,0,1.226,0l7.06-7.06a.875.875,0,0,0,0-1.231Z" transform="translate(-101.478 0)"/>
+  </g>
+</svg>
