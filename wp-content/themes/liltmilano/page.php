@@ -11,10 +11,26 @@
 
 get_header(); ?>
 
+<?php
+// Il Loop
+while ( have_posts() ) :
+	the_post();
+  $id_spazio = get_field('spazio_lilt')->ID;
+
+?>
+
+
+
 <div class="container-fluid">
 
 <?php get_template_part('templates/spazio-description'); ?>
 <?php get_template_part('templates/photo-orari'); ?>
 <?php get_template_part('templates/raggiungerci-photo'); ?>
 
-<?php get_footer();
+
+<?php
+print_r(get_field('youtube'));
+get_footer();
+
+endwhile;
+?>

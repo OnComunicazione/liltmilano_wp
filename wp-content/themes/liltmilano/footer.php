@@ -1,16 +1,6 @@
 <?php
-/**
- * The template for displaying the footer
- *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since 1.0
- * @version 1.2
- */
+$campi_spazio = get_spazio($id_spazio);
+$yt = get_field('youtube');
 
 ?>
 
@@ -27,20 +17,20 @@
             © 2015 Lega Italiana per la Lotta contro i Tumori - Via Venezian, 1 20133 Milano
           </div>
           <div class="footer-left righetta"></div>
-          <a href="tel:+390297389893">
+          <a href="tel:<?php echo $campi_spazio['telefono'] ?>">
             <div class="footer-left numero">
               <div class="numero-icon"></div>
-              02 97389893
+              <?php echo $campi_spazio['telefono'] ?>
             </div>
           </a>
-          <a href="https://www.youtube.com/user/LILTMilanoChannel" target="_blank"><div class="social-icon yt"></div></a>
-          <a href="https://www.instagram.com/liltmilano/" target="_blank"><div class="social-icon ig"></div></a>
+          <a href="<?php echo $yt ?>" target="_blank"><div class="social-icon yt"></div></a>
+          <a href="" target="_blank"><div class="social-icon ig"></div></a>
           <a href="https://twitter.com/liltmilano" target="_blank"><div class="social-icon tw"></div></a>
           <a href="https://www.facebook.com/spazioliltsesto/" target="_blank"><div class="social-icon fb"></div></a>
         </div>
 
       </div>
-      
+
   </div>
 
 <?php wp_footer(); ?>

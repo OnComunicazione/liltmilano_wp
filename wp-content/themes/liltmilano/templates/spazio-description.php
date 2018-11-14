@@ -1,3 +1,6 @@
+<?php $descrizione = get_field('descrizione');
+?>
+
 <div class="row first-row">
   <div class="col-lg-7 left-col" style="padding-bottom: 27px">
     <a href="./">
@@ -7,9 +10,7 @@
       <div class="col-12 nopad">
         <h1 class="title-top" style="">Spazio LILT</h1>
         <h1 class="title-paragrafo" style="margin-bottom: 31px">Milano - Via Neera, 48</h1>
-        <p class="paragrafo">
-        Gli Spazi LILT sono nati per rispondere all’esigenza di promuovere in maniera capillare la prevenzione e la diagnosi precoce, fondamentali nella lotta contro i tumori. Qui puoi fissare un appuntamento per effettuare visite ed esami di diagnosi precoce oncologica seguito da medici e i volontari pronti ad accoglierti con professionalità e competenza, consigliandoti il percorso clinico-diagnostico più adeguato. Troverai professionisti provenienti dalle più qualificate strutture oncologiche del territorio e apparecchiature di ultima generazione.
-        </p>
+        <?php echo $descrizione; ?>
       </div>
 
       <div class="col-lg-6 nopad col-lista">
