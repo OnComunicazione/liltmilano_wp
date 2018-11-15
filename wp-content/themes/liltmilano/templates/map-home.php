@@ -1,3 +1,6 @@
+<?php
+?>
+
 <div class="row home" style="min-height: 500px">
       <div class="col-lg-7 nopad" id="map" style="display: flex; background-color: #e9e9e9">
       </div>

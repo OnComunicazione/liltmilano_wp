@@ -1,7 +1,10 @@
 <?php
-$campi_spazio = get_spazio($id_spazio);
 $yt = get_field('youtube');
-
+$fb = get_field('facebook');
+$ig = get_field('instagram');
+$tw = get_field('twitter');
+$tel = get_field('telefono');
+// $campi_spazio = get_spazio($id_spazio);
 ?>
 
 <div class="footer">
@@ -17,16 +20,17 @@ $yt = get_field('youtube');
             © 2015 Lega Italiana per la Lotta contro i Tumori - Via Venezian, 1 20133 Milano
           </div>
           <div class="footer-left righetta"></div>
-          <a href="tel:<?php echo $campi_spazio['telefono'] ?>">
+          <a href="tel:<?php echo $tel ?>">
             <div class="footer-left numero">
               <div class="numero-icon"></div>
-              <?php echo $campi_spazio['telefono'] ?>
+              <?php echo $tel ?>
             </div>
           </a>
-          <a href="<?php echo $yt ?>" target="_blank"><div class="social-icon yt"></div></a>
-          <a href="" target="_blank"><div class="social-icon ig"></div></a>
-          <a href="https://twitter.com/liltmilano" target="_blank"><div class="social-icon tw"></div></a>
-          <a href="https://www.facebook.com/spazioliltsesto/" target="_blank"><div class="social-icon fb"></div></a>
+          <?php if ($yt) echo "<a href='" . $yt . "'target='_blank'><div class='social-icon yt'></div></a>"; ?>
+          <?php if ($ig) echo "<a href='" . $ig . "'target='_blank'><div class='social-icon ig'></div></a>"; ?>
+          <?php if ($tw) echo "<a href='" . $tw . "'target='_blank'><div class='social-icon tw'></div></a>"; ?>
+          <?php if ($fb) echo "<a href='" . $fb . "'target='_blank'><div class='social-icon fb'></div></a>"; ?>
+
         </div>
 
       </div>

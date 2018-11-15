@@ -56,9 +56,10 @@ function get_submissions() {
 
 function get_spazio($id_spazio) {
   $args = array(
-	   'post_type' => 'spazio_lilt',
-     'post' => $id_spazio
+  	   'post_type' => 'spazio_lilt',
+       'post' => $id_spazio
   );
+
   $query = new WP_Query( $args );
   $obj = array();
 
@@ -78,10 +79,40 @@ function get_spazio($id_spazio) {
     $obj['telefono'] = get_field('telefono');
   endwhile;
 
-  return $obj;
-
   wp_reset_query();
-  wp_reset_post_data();
+  // wp_reset_post_data();
+  return $obj;
 };
 
+function get_all_spazi() {
+  $args = array(
+  	   'post_type' => 'spazio_lilt'
+  );
+
+  $query = new WP_Query( $args );
+  $obj_to_return = array();
+  $obj = array();
+
+  // Il Loop
+  while ( $query->have_posts() ) :
+  	$query->the_post();
+    $coords = get_field('coordinate');
+    $obj['lat'] = $coords['lat'];
+    $obj['lng'] = $coords['lng'];
+    $obj['citta'] = get_field('citta');
+    $obj['indirizzo'] = get_field('indirizzo');
+    $obj['url'] = get_field('url');
+    $obj['affollamento'] = get_field('affollamento');
+    $obj['orari'] = get_field('orari');
+    $obj['prenotazioni'] = get_field('prenotazioni');
+    $obj['come_raggiungerci'] = get_field('come_raggiungerci');
+    $obj['telefono'] = get_field('telefono');
+    array_push($obj_to_return, $obj);
+
+  endwhile;
+
+  wp_reset_query();
+  // wp_reset_post_data();
+  return $obj;
+};
 ?>

@@ -1,4 +1,15 @@
-<?php $descrizione = get_field('descrizione');
+<?php
+$titolo = get_the_title();
+$descrizione = get_field('descrizione');
+$esami = get_terms(array(
+   'post' => $id_spazio,
+   'taxonomy' => 'esame'
+));
+$visite = get_terms(array(
+   'post' => $id_spazio,
+   'taxonomy' => 'visita'
+));
+$campi_spazio = get_spazio($id_spazio);
 ?>
 
 <div class="row first-row">
@@ -9,44 +20,29 @@
     <div class="row firstrowSpazio" style="margin-top: -70px; padding-bottom: 30px;">
       <div class="col-12 nopad">
         <h1 class="title-top" style="">Spazio LILT</h1>
-        <h1 class="title-paragrafo" style="margin-bottom: 31px">Milano - Via Neera, 48</h1>
+        <h1 class="title-paragrafo" style="margin-bottom: 31px">
+          <?php echo $titolo; ?>
+        </h1>
         <?php echo $descrizione; ?>
       </div>
 
       <div class="col-lg-6 nopad col-lista">
             <div class="list-icon visite"></div>
             <div class="list-title">Visite</div>
-            <p class="paragrafo-puntato list">
-            senologiche
-            </p>
-            <p class="paragrafo-puntato list">
-            ginecologiche
-            </p>
-            <p class="paragrafo-puntato list">
-            dermatologiche
-            </p>
-            <p class="paragrafo-puntato list">
-              urologiche
-            </p>
-            <p class="paragrafo-puntato list">
-            otorinolaringoiatriche
-            </p>
+            <?php
+            foreach ($visite as $visita) {
+                echo '<p class="paragrafo-puntato list">' . $visita->name . '</p>';
+            };
+             ?>
           </div>
           <div class="col-lg-6 nopad col-lista">
             <div class="list-icon esami"></div>
             <div class="list-title">Esami</div>
-            <p class="paragrafo-puntato list">
-            mammografia
-            </p>
-            <p class="paragrafo-puntato list">
-            ecografia mammaria
-            </p>
-            <p class="paragrafo-puntato list">
-            ecografia ginecologica
-            </p>
-            <p class="paragrafo-puntato list">
-            Pap-test
-            </p>
+            <?php
+            foreach ($esami as $esame) {
+                echo '<p class="paragrafo-puntato list">' . $esame->name . '</p>';
+            };
+             ?>
           </div>
 
 

@@ -24,12 +24,11 @@ while ( have_posts() ) :
 <div class="container-fluid">
 
 <?php get_template_part('templates/spazio-description'); ?>
-<?php get_template_part('templates/photo-orari'); ?>
+<?php get_template_part('templates/news-orari'); ?>
 <?php get_template_part('templates/raggiungerci-photo'); ?>
 
 
 <?php
-print_r(get_field('youtube'));
 get_footer();
 
 endwhile;

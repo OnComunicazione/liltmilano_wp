@@ -1,3 +1,6 @@
 [14-Nov-2018 16:37:48 UTC] PHP Parse error:  syntax error, unexpected ')', expecting variable (T_VARIABLE) in /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-content/themes/liltmilano/functions.php on line 57
 [14-Nov-2018 16:37:51 UTC] PHP Parse error:  syntax error, unexpected ')', expecting variable (T_VARIABLE) in /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-content/themes/liltmilano/functions.php on line 57
 [14-Nov-2018 16:38:04 UTC] PHP Parse error:  syntax error, unexpected ')', expecting variable (T_VARIABLE) in /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-content/themes/liltmilano/functions.php on line 57
+[15-Nov-2018 08:54:11 UTC] PHP Warning:  mysqli_select_db(): MySQL server has gone away in /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-includes/wp-db.php on line 1024
+[15-Nov-2018 08:54:11 UTC] PHP Warning:  mysqli_select_db(): Error while reading INIT_DB's response packet. PID=25268 in /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-includes/wp-db.php on line 1024
+[15-Nov-2018 13:04:59 UTC] PHP Fatal error:  Cannot redeclare get_taxonomies() (previously declared in /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-includes/taxonomy.php:169) in /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-content/themes/liltmilano/functions.php on line 106

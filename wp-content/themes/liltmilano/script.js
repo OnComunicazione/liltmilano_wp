@@ -11,48 +11,6 @@ var map = new mapboxgl.Map({
 
 var pointClicked = false;
 
-var geojson = {
-  type: 'FeatureCollection',
-  features: [
-    {
-    "type": "Feature",
-    "properties": {
-      "label": "Via Vigano', 4",
-      "city": "Milano",
-      "slug": "vigano",
-      "size": 1,
-      "big": false
-    },
-    "geometry": {
-      "coordinates": [
-        9.18969,
-        45.481588
-      ],
-      "type": "Point"
-    }
-  },
-  {
-  "type": "Feature",
-  "properties": {
-    "label": "Viale Caterina Da Forlì, 61",
-    "city": "Milano",
-    "slug": "caterina-da-forli",
-    "size": 1,
-    "big": false
-  },
-  "geometry": {
-    "coordinates": [
-      9.138479,
-      45.460977
-    ],
-    "type": "Point"
-  }
-  }
-  ]
-};
-
-
-
 function togliTrans(current_marker) {
   setTimeout(function() {
     console.log('rimuovo');
