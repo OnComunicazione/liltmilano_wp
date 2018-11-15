@@ -50,48 +50,9 @@ get_header(); ?>
 var geojson = {
   type: 'FeatureCollection',
   features: [
-
     <?php
-    $spazi = get_all_spazi();
-    print_r($spazi);
-    $stringa = '';
-    // foreach ($spazi as $spazio) {
-    //   $stringa .= '{'
-    //             . '"type": "Feature",'
-    //             . '"properties": {'
-    //             . '"label":' . $spazio->indirizzo . ','
-    //             . '"slug":' . $spazio->indirizzo . ','
-    //             . '"city":' . $spazio->citta . ','
-    //             . '"size": 1,'
-    //             . '  "big": false'
-    //             . '},'
-    //             . '"geometry": {'
-    //             . '  "coordinates": ['
-    //                 . $spazio->lng . ','
-    //                 . $spazio->lat .
-    //             . '],'
-    //             . '"type": "Point"}},';
-    // };
-
-    foreach ($spazi as $spazio) {
-      $stringa .= '{'
-                . '"type": "Feature",'
-                . '"properties": {'
-                . '"label":"' . $spazio['indirizzo'] . '",'
-                // . '"slug":"' . $spazio->indirizzo . '",'
-                . '"city":"' . $spazio['citta'] . '",'
-                . '"size": 1,'
-                . '  "big": false'
-                . '},'
-                . '"geometry": {'
-                . '"coordinates": [' .$spazio['lng'] . ',' .$spazio['lat'] . '],'
-                . '"type": "Point"}},';
-    };
-
-
-    echo $stringa;
+    echo get_all_JSON_spazi();
    ?>
-
   ]}
 </script>
 <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js"></script>

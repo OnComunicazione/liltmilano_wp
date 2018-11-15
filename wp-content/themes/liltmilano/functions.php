@@ -84,7 +84,7 @@ function get_spazio($id_spazio) {
   return $obj;
 };
 
-function get_all_spazi() {
+function get_all_JSON_spazi() {
   $args = array(
   	   'post_type' => 'spazio_lilt'
   );
@@ -97,22 +97,44 @@ function get_all_spazi() {
   while ( $query->have_posts() ) :
   	$query->the_post();
     $coords = get_field('coordinate');
-    $obj['lat'] = $coords['lat'];
-    $obj['lng'] = $coords['lng'];
-    $obj['citta'] = get_field('citta');
-    $obj['indirizzo'] = get_field('indirizzo');
-    $obj['url'] = get_field('url');
-    $obj['affollamento'] = get_field('affollamento');
-    $obj['orari'] = get_field('orari');
-    $obj['prenotazioni'] = get_field('prenotazioni');
-    $obj['come_raggiungerci'] = get_field('come_raggiungerci');
-    $obj['telefono'] = get_field('telefono');
+
+    $esami = get_terms(array(
+       'post' => get_the_ID(),
+       'taxonomy' => 'esame'
+    ));
+    $visite = get_terms(array(
+       'post' => get_the_ID(),
+       'taxonomy' => 'visita'
+    ));
+
+    $obj['type'] = 'Feature';
+    $obj['properties'] = array(
+      'label' => get_field('indirizzo'),
+      'city' => get_field('citta'),
+      'size' => 1,
+      'big' => false,
+      'url' => get_field('url'),
+      'esami' => $esami,
+      'visite' => $visite,
+      'affollamento' => get_field('affollamento'),
+    );
+    $obj['geometry'] = array(
+      'coordinates' => array(
+        'lng' => floatval($coords['lng']),
+        'lat' => floatval($coords['lat'])
+      ),
+      'type' => 'Point'
+    );
+
+
+
     array_push($obj_to_return, $obj);
 
   endwhile;
 
   wp_reset_query();
   // wp_reset_post_data();
-  return $obj;
+
+  return json_encode($obj);
 };
 ?>
