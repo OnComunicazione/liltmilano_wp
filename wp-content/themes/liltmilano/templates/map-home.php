@@ -1,5 +1,3 @@
-<?php
-?>
 
 <div class="row home" style="min-height: 500px">
       <div class="col-lg-7 nopad" id="map" style="display: flex; background-color: #e9e9e9">
@@ -21,25 +19,15 @@
           <h1 class="title-top" id="label"></h1>
           <div class="row listaVisiteMap ">
             <div class="col-sm-6 paragrafo white nopad">
-              <ul>
-                <li>Tipo visita</li>
-                <li>Tipo visita</li>
-                <li>Tipo visita</li>
-                <li>Tipo visita</li>
-                <li>Tipo visita</li>
-              </ul>
+              <h1 class="title-top" style="font-size: 19px">Visite</h1>
+              <ul id="visite-home"></ul>
             </div>
             <div class="col-sm-6 paragrafo white nopad">
-              <ul>
-                <li>Tipo visita</li>
-                <li>Tipo visita</li>
-                <li>Tipo visita</li>
-                <li>Tipo visita</li>
-                <li>Tipo visita</li>
-              </ul>
+              <h1 class="title-top" style="font-size: 19px">Esami</h1>
+              <ul id="esami-home"></ul>
             </div>
           </div>
-          <a style="position: absolute; bottom: 60px;">
+          <a style="position: absolute; bottom: 60px;" id="sito">
             <div class="btn-sito">
               <div class="scritta-sito">SCOPRI DI PIÙ</div>
               <div class="freccia-sito"></div>

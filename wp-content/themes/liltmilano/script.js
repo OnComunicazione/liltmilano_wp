@@ -46,8 +46,19 @@ geojson.features.forEach(function(marker) {
         map.flyTo({
           center: marker.geometry.coordinates,
         });
+
+        document.getElementById('visite-home').innerHTML =
+          marker.properties.visite.reduce(function(accum, item, i, arr) {
+            return accum += '<li>' + item['name'] + '</li>'
+          }, '');
+        document.getElementById('esami-home').innerHTML =
+          marker.properties.esami.reduce(function(accum, item, i, arr) {
+            return accum += '<li>' + item['name'] + '</li>'
+          }, '');
+
         document.getElementById('city').innerHTML = marker.properties.city
         document.getElementById('label').innerHTML = marker.properties.label
+        document.getElementById('sito').setAttribute('href', marker.properties.url)
         map.resize()
     },150)
   }
