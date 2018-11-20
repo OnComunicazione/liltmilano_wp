@@ -94,3 +94,43 @@ var backToMap = function() {
   }, 150)
   map.resize()
 }
+
+// creo loop spazi nella pagina Mappa
+function initPaginaMappa() {
+  var grouped_cities = _.toArray(_.groupBy(geojson.features, 'properties.city'))
+  var loop = grouped_cities.reduce(function(accum, item, i, arr) {
+
+    return accum +=
+    `<h1 class="city">${item[0].properties.city}</h1>
+    <div class="col-lista"> ` +
+
+      item.reduce(function(acc, it, ind) {
+        return acc += `<p class="paragrafo-puntato list">
+                      ${it.properties.label}
+                      </p>
+                      `
+      },'')
+    + `</div>`
+  }, '')
+  document.getElementById('loop-spazi').innerHTML = loop
+}
+
+setTimeout(function() {
+  var a = document.querySelectorAll('input.ninja-forms-field');
+  console.log(a);
+  a.forEach(function(i){
+    i.addEventListener('focus', function(e) {
+      e.target.parentNode.parentNode.children[0].children[0].classList.add('focused')
+    })
+    i.addEventListener('blur', function(e) {
+      if (e.target.value) return false
+      e.target.parentNode.parentNode.children[0].children[0].classList.remove('focused')
+    })
+  })
+}, 1000)
+
+
+
+
+
+initPaginaMappa();

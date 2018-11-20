@@ -24,6 +24,7 @@ while ( have_posts() ) :
 <div class="container-fluid">
 
 <?php get_template_part('templates/spazio-description'); ?>
+<?php if (get_field('video')) get_template_part('templates/video'); ?>
 <?php get_template_part('templates/news-orari'); ?>
 <?php get_template_part('templates/raggiungerci-photo'); ?>
 

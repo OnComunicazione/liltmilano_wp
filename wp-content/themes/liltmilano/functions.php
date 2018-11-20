@@ -54,6 +54,17 @@ function get_submissions() {
 // add_action( 'wp_enqueue_scripts', 'additional_custom_styles' );
 //
 
+
+
+// function on_form_loaded() {
+//   wp_enqueue_script('form', bloginfo('template_url') . '/script-form.js', false);
+// }
+// // do_action('ninja_forms_loaded');
+// add_action('ninja_forms_loaded', 'on_form_loaded', 10, 0);
+
+
+
+// query per un singolo spazio lilt
 function get_spazio($id_spazio) {
   $args = array(
   	   'post_type' => 'spazio_lilt',
@@ -84,11 +95,11 @@ function get_spazio($id_spazio) {
   return $obj;
 };
 
+// query per tutti gli spazi lilt in formato json (da usare nelle mappe)
 function get_all_JSON_spazi() {
   $args = array(
   	   'post_type' => 'spazio_lilt'
   );
-
   $query = new WP_Query( $args );
   $obj_to_return = array();
   $obj = array();
@@ -97,7 +108,6 @@ function get_all_JSON_spazi() {
   while ( $query->have_posts() ) :
   	$query->the_post();
     $coords = get_field('coordinate');
-
     $esami = get_terms(array(
        'post' => get_the_ID(),
        'taxonomy' => 'esame'
@@ -106,7 +116,6 @@ function get_all_JSON_spazi() {
        'post' => get_the_ID(),
        'taxonomy' => 'visita'
     ));
-
     $obj['type'] = 'Feature';
     $obj['properties'] = array(
       'label' => get_field('indirizzo'),
@@ -125,16 +134,38 @@ function get_all_JSON_spazi() {
       ),
       'type' => 'Point'
     );
-
-
-
     array_push($obj_to_return, $obj);
-
   endwhile;
-
   wp_reset_query();
   // wp_reset_post_data();
-
-  return json_encode($obj);
+  return json_encode($obj_to_return);
 };
+
+// query per gli articoli di uno spazio
+function get_articles($id_spazio) {
+  $args = array(
+  	   'post_type' => 'post',
+       // 'post__in' => $id_spazio,
+       'meta_query' => array(
+         array(
+           'key' => 'spazio_lilt',
+           'value' => $id_spazio,
+           'compare' => 'LIKE'
+         )
+       )
+  );
+  $query = new WP_Query( $args );
+  $obj = array();
+  $obj_to_return = array();
+  while ( $query->have_posts() ) :
+  	$query->the_post();
+    $obj['immagine'] = get_field('immagine_banner');
+    $obj['titolo'] = get_field('testo_banner');
+    array_push($obj_to_return, $obj);
+  endwhile;
+  wp_reset_query();
+  return $obj_to_return;
+};
+
+
 ?>

@@ -301,7 +301,7 @@ h1{
 .paragrafo-form{
   font-size: 17px;
   font-family: Arial;
-  margin-top: 30px;
+  margin-top: 24px;
   line-height: 22px
 }
 
@@ -314,36 +314,118 @@ h1{
 }
 
 .form {
-  margin-top: 10%;
   margin-top: 5vh;
   width: 65%;
 }
 
 .form p {
-  color: #EA1729;
+  font-family: Arial;
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 46px;
 }
 
-div[class*="MuiInputBase"], input[class*="MuiInputBase"] {
-  padding-bottom: 7px !important;
+.nf-form-fields-required {
+  display: none;
 }
-span[class*="MuiTypography"] {
+.nf-field-container {
+    margin-bottom: 35px !important;
+}
+.ninja-forms-field.nf-element {
+  border-width: 0px;
+  border-bottom-width: 1px !important;
+  padding-bottom: 5px !important;
+  background-color: transparent;
+  border-radius: 0;
+  border-color: #3c3c3c;
+}
+.listselect-wrap .nf-field-element {
+  margin-top: 5px !important;
+  padding-bottom: 5px;
+  border-bottom: 1px solid;
+}
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: transparent !important;
+}
+input[type=button].ninja-forms-field.nf-element {
+  border-bottom-width: 0px !important;
+  padding-bottom: 13px !important;
+  background-color: #EA1729;
+  color: #fff;
+  font-size: 17px;
   font-weight: 600;
-  letter-spacing: 0.03em;
+  font-family: Arial;
+  padding: 13px;
+  width: 100%;
+  margin-top: 2vh;
+  margin-bottom: 5vh;
+  text-align: center;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: 0.2s;
+}
+input[type=button].ninja-forms-field.nf-element:hover {
+  background-color: #c20212
+}
+.label-above .nf-field-label {
+  margin-bottom: 5px !important;
   font-size: 15px;
+  letter-spacing: 0.02em;
 }
-div[class*="IndexPage-textField"] {
-  margin-bottom: 1.5vh;
+/* .listselect-wrap .label-above .nf-field-label {
+  margin-bottom: 10px;
+} */
+.nf-field-label label{
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  position: absolute;
+  transition: .2s !important;
+  top: 0 !important;
 }
-p[class*="MuiFormHelperText"] {
-  color: #EA1729;
-  font-size: 0.8rem;
-  letter-spacing: 0.015em;
-  margin-top: 6px;
-  line-height: 1;
+.label-above .list-select-wrap .nf-field-label label{
+  top: -20px !important;
+  font-size: 13px !important;
 }
-span[class*="MuiIconButton"] {
-  padding-left: 0;
-  padding-top: 4px;
+.label-above .nf-field-label label.focused {
+  top: -20px !important;
+  font-size: 13px !important;
+}
+.label-right .checkbox-wrap .nf-field-label {
+    width: 100% !important;
+}
+#nf-label-field-11 {
+  margin-top: 2px;
+}
+select, input[type="color" i][list] {
+    border-image: none;
+    border-style: none;
+    border-radius: 0;
+    border-bottom-width: 1px !important;
+}
+
+.nascondi {
+  display: none;
+}
+.ninja-forms-field.nf-element:focus {
+  outline: none;
+}
+
+.nf-error .ninja-forms-field {
+  border-width: 0px !important;
+  border-bottom-width: 1px !important;
+  border-bottom: 1px solid #e80000;
+}
+.nf-error-msg {
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  position: absolute;
+  top: 3px;
+  right: 0;
+  margin-right: 0 !important;
+}
+
+.ninja-forms-req-symbol {
+    color: #373737 !important;
 }
 
 .labelCheckbox {
@@ -355,25 +437,6 @@ span[class*="MuiIconButton"] {
 }
 .labelCheckbox:hover {
   opacity: 0.8;
-}
-
-.formBtn {
-  background-color: #EA1729;
-  color: #fff;
-  font-size: 17px;
-  font-weight: 600;
-  font-family: Arial;
-  padding: 13px;
-  width: 100%;
-  margin-top: 10%;
-  margin-top: 5vh;
-  text-align: center;
-  letter-spacing: 0.1em;
-  cursor: pointer;
-  transition: 0.2s;
-}
-.formBtn:hover {
-  background-color: #c20212
 }
 
 .headline-container{

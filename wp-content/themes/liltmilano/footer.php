@@ -19,6 +19,7 @@ $tel = get_field('telefono');
           <div class="footer-left ragionesociale">
             © 2015 Lega Italiana per la Lotta contro i Tumori - Via Venezian, 1 20133 Milano
           </div>
+          
           <div class="footer-left righetta"></div>
           <a href="tel:<?php echo $tel ?>">
             <div class="footer-left numero">
@@ -26,6 +27,7 @@ $tel = get_field('telefono');
               <?php echo $tel ?>
             </div>
           </a>
+
           <?php if ($yt) echo "<a href='" . $yt . "'target='_blank'><div class='social-icon yt'></div></a>"; ?>
           <?php if ($ig) echo "<a href='" . $ig . "'target='_blank'><div class='social-icon ig'></div></a>"; ?>
           <?php if ($tw) echo "<a href='" . $tw . "'target='_blank'><div class='social-icon tw'></div></a>"; ?>
