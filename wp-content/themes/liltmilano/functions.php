@@ -12,7 +12,6 @@ function get_submissions() {
   foreach($field_models as $key => $value) {
     array_push($fields, $value->get_setting('key'));
     array_push($fields_label, $value->get_setting('label'));
-
   }
 
   // loop per tirare giu tutte le submissions
