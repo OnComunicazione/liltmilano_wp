@@ -347,7 +347,7 @@ h1{
 input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     background-color: transparent !important;
 }
-input[type=button].ninja-forms-field.nf-element {
+input[type=button].ninja-forms-field.nf-element, .formBtn {
   border-bottom-width: 0px !important;
   padding-bottom: 13px !important;
   background-color: #EA1729;
@@ -364,7 +364,7 @@ input[type=button].ninja-forms-field.nf-element {
   cursor: pointer;
   transition: 0.2s;
 }
-input[type=button].ninja-forms-field.nf-element:hover {
+input[type=button].ninja-forms-field.nf-element:hover, .formBtn:hover {
   background-color: #c20212
 }
 .label-above .nf-field-label {

@@ -1,13 +1,24 @@
 <?php
 /**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
  * Template Name: Database
  */
+
+if (!is_user_logged_in()) wp_redirect(home_url());
+$req_uri = $_SERVER['REQUEST_URI'];
+$results = get_submissions($_GET['pag']);
+$submissions = $results['submissions'];
+$pagina = $results['pagina_corrente'];
+$n_pagine = $results['n_pagine'];
+$labels = array();
+$labels['milano-caterinadaforli'] = 'Viale Caterina da Forlì';
+$labels['milano-neera'] = 'Via Neera';
+$labels['milano-vigano'] = 'Via Viganò';
+$labels['brugherio-lombardia'] = 'Brugherio - Viale Lombardia';
+$labels['cernusco-fatebenefratelli'] = 'Cernusco - Via Fatebenefratelli';
+$labels['novate-manzoni'] = 'Novate - Via Manzoni';
+$labels['sesto-fratellicairoli'] = 'Sesto - Via Fratelli Cairoli';
+$labels['0'] = 'No';
+$labels['1'] = 'Sì';
 
 get_header(); ?>
 
@@ -24,52 +35,57 @@ get_header(); ?>
     <table>
       <thead>
         <th class="pad"></th>
-        <th class="city">Nome</th>
-        <th class="city">Cognome</th>
-        <th class="city">Tipo di visita</th>
-        <th class="city">Lorem ipsum</th>
-        <th class="city">Lorem</th>
+
+        <?php
+        foreach ($submissions[0] as $key=>$value) {
+            echo '
+            <th class="city">'.$key.'</th>
+            ';
+        };
+        ?>
+
         <th class="pad"></th>
       </thead>
       <tbody>
-        <tr>
-          <td></td>
-          <td>Ciccio</td>
-          <td>Ciccio</td>
-          <td>Ciccio</td>
-          <td>Ciccio</td>
-          <td>Ciccio</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Ciccio</td>
-          <td>Ciccio</td>
-          <td>Ciccio</td>
-          <td>Ciccio</td>
-          <td>Ciccio</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Ciccio</td>
-          <td>Ciccio</td>
-          <td>Ciccio</td>
-          <td>Ciccio</td>
-          <td>Ciccio</td>
-          <td></td>
-        </tr>
+
+        <?php
+        foreach ($submissions as $sub) {
+            echo '
+            <tr>
+              <td></td>';
+              foreach ($sub as $key=>$value) {
+                if ($key === 'Spazio LILT' || $key === 'Spedito')  {echo '<td>' . $labels[$value] .'</td>';}
+                else {echo '<td>' . $value .'</td>';};
+
+              };
+            echo '<td></td>
+            </tr>
+            ';
+        };
+        ?>
+
+
       </tbody>
     </table>
 
     <div class="row pag">
-      <h1 class="col-2 city">Pag. 1</h1>
+      <h1 class="col-2 city">Pag. <?php echo $pagina; ?> di <?php echo $n_pagine; ?></h1>
       <div class="col-2 offset-8 pagination">
-        <img class="inactive" src="<?php echo get_stylesheet_directory_uri(). '/images/arrow_b.svg' ?>">
-        <h1 class="col-2 city active">1</h1>
-        <h1 class="col-2 city">2</h1>
-        <h1 class="col-2 city">3</h1>
-        <img src="<?php echo get_stylesheet_directory_uri(). '/images/arrow_b.svg' ?>">
+        <?php if ($pagina <= 1) : ?>
+          <img class="inactive first" src="<?php echo get_stylesheet_directory_uri(). '/images/arrow_b.svg' ?>">
+        <?php else : ?>
+          <a href="./?pag=<?php echo $pagina <= 1 ? 1 : $pagina-1; ?>">
+            <img class="first" src="<?php echo get_stylesheet_directory_uri(). '/images/arrow_b.svg' ?>">
+          </a>
+        <?php endif; ?>
+          <!-- <h1 class="col-2 city"> 1 </h1> -->
+        <?php if ($pagina >= $n_pagine) : ?>
+          <img class="inactive last" src="<?php echo get_stylesheet_directory_uri(). '/images/arrow_b.svg' ?>">
+        <?php else : ?>
+          <a href="./?pag=<?php echo $pagina >= $n_pagine ? $n_pagine : $pagina+1; ?>">
+            <img class="last" src="<?php echo get_stylesheet_directory_uri(). '/images/arrow_b.svg' ?>">
+          </a>
+        <?php endif; ?>
       </div>
     </div>
 

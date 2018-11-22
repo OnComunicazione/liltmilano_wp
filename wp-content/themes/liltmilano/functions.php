@@ -1,9 +1,25 @@
 <?php
 
-function get_submissions() {
+function get_submissions($page=1, $per_page=15) {
+  if ($page < 1) $page = 1;
+  if (!isset($page)) $page = 1;
+  if (!isset($per_page)) $per_page = 15;
+
   $field_models = Ninja_Forms()->form( 2 )->get_fields();
   $allSubs_model = Ninja_Forms()->form( 2 )->get_subs();
+  $filtered_subs = array();
 
+  foreach($allSubs_model as $key => $submission_model) {
+    if ($submission_model->get_field_value('spazio_lilt_1542724594218') === 'milano-caterinadaforli') {
+      array_push($filtered_subs, $submission_model);
+    }
+  }
+
+  PC::debug($filtered_subs);
+
+
+  $n_pagine = ceil(count($filtered_subs)/$per_page);
+  $filtered_subs = array_slice($filtered_subs, $per_page*$page-$per_page, $per_page);
   $fields = array();
   $fields_label = array();
   $submissions = array();
@@ -16,15 +32,21 @@ function get_submissions() {
   }
 
   // loop per tirare giu tutte le submissions
-  foreach($allSubs_model as $key => $submission_model) {
+  foreach($filtered_subs as $key => $submission_model) {
     $obj1 = new \stdClass;
     foreach ($fields_label as $key => $value) {
-      $obj1->$value = $submission_model->get_field_value($fields[$key]);
+      if ($value !== 'PRENOTA' && $value !== 'Privacy Policy') {
+        $obj1->$value = $submission_model->get_field_value($fields[$key]);
+      }
     }
     array_push($submissions, $obj1);
   }
 
-  return $submissions;
+  return array(
+    'submissions'=> $submissions,
+    'n_pagine'=> $n_pagine,
+    'pagina_corrente'=> $page
+  );
 
 }
 

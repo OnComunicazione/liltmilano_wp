@@ -25,3 +25,4 @@
 [20-Nov-2018 15:55:38 UTC] PHP Warning:  mysqli_set_charset(): MySQL server has gone away in /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-includes/wp-db.php on line 756
 [20-Nov-2018 15:55:38 UTC] PHP Warning:  mysqli_set_charset(): Error reading result set's header in /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-includes/wp-db.php on line 756
 [20-Nov-2018 15:55:38 UTC] PHP Warning:  mysqli_set_charset(): Error executing query in /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-includes/wp-db.php on line 756
+[22-Nov-2018 16:42:35 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ',' or ')' in /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-content/themes/liltmilano/functions.php on line 10

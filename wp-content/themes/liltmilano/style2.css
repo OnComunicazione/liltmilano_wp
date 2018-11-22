@@ -17,6 +17,10 @@
 
 /* ........... database .............*/
 
+.db {
+  margin-bottom: 50px;
+}
+
 .db .logo {
   margin: 46px 60px;
   width: 313px;
@@ -90,13 +94,14 @@
   width: 20px;
   height: 20px;
   margin: 10px;
-  margin-top: 9px;
+  /* margin-top: 9px; */
   cursor: pointer;
   transition: .15s;
 }
-.pagination img:first-child {
-  transform: rotate(180deg)
+.pagination .first {
+  transform: rotate(180deg);
 }
+
 .pagination img:hover {
   opacity: 0.6;
 }
