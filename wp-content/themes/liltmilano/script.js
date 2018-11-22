@@ -115,9 +115,9 @@ function initPaginaMappa() {
   document.getElementById('loop-spazi').innerHTML = loop
 }
 
-setTimeout(function() {
+function initForm() {
+  console.log('here')
   var a = document.querySelectorAll('input.ninja-forms-field');
-  console.log(a);
   a.forEach(function(i){
     i.addEventListener('focus', function(e) {
       e.target.parentNode.parentNode.children[0].children[0].classList.add('focused')
@@ -126,8 +126,15 @@ setTimeout(function() {
       if (e.target.value) return false
       e.target.parentNode.parentNode.children[0].children[0].classList.remove('focused')
     })
-  })
-}, 1000)
+  });
+}
+jQuery(document).ready(function() {
+  jQuery(document).on('nfFormReady',initForm);
+  jQuery(document).on('nfFormSubmitResponse',initForm);
+})
+
+
+
 
 
 
