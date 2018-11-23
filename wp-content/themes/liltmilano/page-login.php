@@ -11,8 +11,9 @@
 
 if (is_user_logged_in()) wp_redirect(home_url() . '/iscrizioni');
 
-$user = $_GET['username'];
-$pw = $_GET['password'];
+$user = $_POST['username'];
+$pw = $_POST['password'];
+
 if (isset($user) && isset($pw)) {
   $creds = array(
         'user_login'    => $user,
@@ -20,7 +21,9 @@ if (isset($user) && isset($pw)) {
         'remember'      => true
     );
   wp_signon($creds);
+  wp_redirect(home_url() . '/iscrizioni');
 }
+
 get_header(); ?>
 
 <div class="container-fluid login">
@@ -28,7 +31,7 @@ get_header(); ?>
       <div class="logo logo-home"></div>
     </a>
 
-    <form class="login-form" action="./">
+    <form class="login-form" action="./" method="post">
       <label>Username</label><br>
       <input type="text" name="username" class="ninja-forms-field nf-element"><br>
       <label>Password</label><br>

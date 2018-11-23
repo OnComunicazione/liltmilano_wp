@@ -225,8 +225,27 @@ function get_articles($id_spazio) {
   return $obj_to_return;
 };
 
-function admin_default_page() {
-  return get_permalink() . '/iscrizioni';
-};
-add_filter('login_redirect', 'admin_default_page', 10, 3);
+function my_login_redirect( $redirect_to, $request, $user ) {
+  PC::debug($redirect_to);
+  $user = wp_get_current_user();
+    //is there a user to check?
+    if (isset($user->roles) && is_array($user->roles)) {
+        //check for subscribers
+        if (in_array('subscriber', $user->roles)) {
+            // redirect them to another URL, in this case, the homepage
+            $redirect_to =  home_url() . '/iscrizioni';
+
+            return $redirect_to;
+        }
+    }
+
+    return $redirect_to;
+}
+
+add_filter( 'edit_profile_url', 'my_login_redirect' );
+add_filter( 'login_redirect', 'my_login_redirect' );
+add_filter( 'logout_redirect', 'my_login_redirect' );
+
+
+
 ?>

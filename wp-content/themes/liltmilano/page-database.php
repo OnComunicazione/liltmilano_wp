@@ -3,7 +3,7 @@
  * Template Name: Database
  */
 
-if (!is_user_logged_in()) wp_redirect(home_url());
+if (!is_user_logged_in()) wp_redirect(home_url().'/login');
 
 $current_user_id = get_current_user_id();
 $current_user_spaziolilt = get_field('spazio_lilt_utente','user_'.$current_user_id);
