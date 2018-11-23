@@ -15,9 +15,6 @@ function get_submissions($page=1, $per_page=15) {
     }
   }
 
-  PC::debug($filtered_subs);
-
-
   $n_pagine = ceil(count($filtered_subs)/$per_page);
   $filtered_subs = array_slice($filtered_subs, $per_page*$page-$per_page, $per_page);
   $fields = array();

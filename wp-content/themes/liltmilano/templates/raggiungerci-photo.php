@@ -1,4 +1,5 @@
 <?php
+$id_spazio = get_field('spazio_lilt')->ID;
 $immagine = get_field('immagine');
 $campi_spazio = get_spazio($id_spazio);
 

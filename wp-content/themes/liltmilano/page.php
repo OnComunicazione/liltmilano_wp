@@ -16,10 +16,8 @@ get_header(); ?>
 while ( have_posts() ) :
 	the_post();
   $id_spazio = get_field('spazio_lilt')->ID;
-
+	// PC::debug($id_spazio);
 ?>
-
-
 
 <div class="container-fluid">
 

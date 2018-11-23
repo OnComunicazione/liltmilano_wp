@@ -51,17 +51,4 @@ get_header(); ?>
           </div>
 </div>
 
-<script>
-var geojson = {
-  type: 'FeatureCollection',
-  features:
-    <?php
-    echo get_all_JSON_spazi();
-   ?>
-  }
-</script>
-<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
-<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js"></script>
-<script src="<?php echo get_stylesheet_directory_uri(). '/script.js' ?>"></script>
-
 <?php get_footer();

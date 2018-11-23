@@ -1,6 +1,7 @@
 <?php
 $titolo = get_the_title();
 $descrizione = get_field('descrizione');
+$id_spazio = get_field('spazio_lilt')->ID;
 $esami = get_terms(array(
    'post' => $id_spazio,
    'taxonomy' => 'esame'
@@ -14,7 +15,7 @@ $campi_spazio = get_spazio($id_spazio);
 
 <div class="row first-row">
   <div class="col-lg-7 left-col" style="padding-bottom: 27px">
-    <a href="./">
+    <a href="<?php echo bloginfo('url') ?>">
       <div class="logo logo-single"></div>
     </a>
     <div class="row firstrowSpazio" style="margin-top: -70px; padding-bottom: 30px;">

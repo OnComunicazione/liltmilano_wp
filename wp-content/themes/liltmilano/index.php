@@ -12,7 +12,6 @@
 
 
 get_header(); ?>
-<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14.0.0/dist/smooth-scroll.polyfills.min.js"></script>
 
 <div class="container-fluid">
 
@@ -45,19 +44,6 @@ get_header(); ?>
 <?php get_template_part('templates/photo-description'); ?>
 
 <?php get_template_part('templates/map-home'); ?>
-
-<script>
-var scroll = new SmoothScroll('a[href*="#"]');
-var geojson = {
-  type: 'FeatureCollection',
-  features:
-    <?php
-    echo get_all_JSON_spazi();
-   ?>
-  }
-</script>
-<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js"></script>
-<script src="<?php echo get_stylesheet_directory_uri(). '/script.js' ?>"></script>
 
 <?php get_footer();
 ?>
