@@ -491,6 +491,9 @@ h1.title-paragrafo.white {
   .col-lista {
     margin-top: 27px;
   }
+  .swiper-container {
+      height: 350px;
+  }
   .col-bot {
     padding-bottom: 23px;
   }
@@ -517,9 +520,13 @@ h1.title-paragrafo.white {
     padding-left: 40px;
     padding-bottom: 28px;
   }
-  /* .background-black {
-    padding-left: 25px !important;
-  } */
+  .swiper-container {
+      height: 250px;
+  }
+  .news-title {
+    left: 42px;
+    width: 60%;
+  }
   h1.title-paragrafo.white {
     margin-top: 29px;
   }

@@ -331,6 +331,16 @@ h1{
 .nf-field-container {
     margin-bottom: 35px !important;
 }
+
+.login-form {
+  width: 330px;
+  margin: 100px auto;
+}
+.login-form input {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
 .ninja-forms-field.nf-element {
   border-width: 0px;
   border-bottom-width: 1px !important;
@@ -421,6 +431,9 @@ select, input[type="color" i][list] {
   border-bottom-width: 1px !important;
   border-bottom: 1px solid #e80000;
 }
+.listselect-wrap.nf-error .ninja-forms-field {
+  border-bottom-width: 0px !important;
+}
 .nf-error-msg {
   font-size: 12px;
   letter-spacing: 0.03em;
@@ -429,9 +442,22 @@ select, input[type="color" i][list] {
   right: 0;
   margin-right: 0 !important;
 }
-
+.listselect-container .nf-error-msg {
+  margin-right: 21px !important;
+  margin-top: 5px !important;
+}
 .ninja-forms-req-symbol {
     color: #373737 !important;
+}
+
+.success-icon-form {
+  width: 35px;
+  height: 35px;
+  margin-top: -5px;
+  margin-right: 20px;
+  background-image: url('./images/check.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .labelCheckbox {

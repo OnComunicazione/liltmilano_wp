@@ -13,7 +13,7 @@ $tel = get_field('telefono');
           <div class="footer-left righetta"></div>
           <a href="https://www.legatumori.mi.it/" target="_blank" class="footer-left ragionesociale linkmenu">LILT Milano</a>
           <div class="footer-left righetta"></div>
-          <a onClick={this.openNewsletter} class="footer-left ragionesociale linkmenu" style="cursor: pointer">Newsletter</a>
+          <a href="https://www.legatumori.mi.it/" target="_blank" class="footer-left ragionesociale linkmenu" style="cursor: pointer">Newsletter</a>
         </div>
         <div class="row nomargin" style="display: block">
           <div class="footer-left ragionesociale">

@@ -185,5 +185,8 @@ function get_articles($id_spazio) {
   return $obj_to_return;
 };
 
-
+function admin_default_page() {
+  return home_url();
+}
+add_filter('login_redirect', 'admin_default_page', 10, 3);
 ?>
