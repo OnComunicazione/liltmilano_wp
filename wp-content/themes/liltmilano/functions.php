@@ -226,7 +226,7 @@ function get_articles($id_spazio) {
 };
 
 function admin_default_page() {
-  return home_url();
-}
+  return get_permalink() . '/iscrizioni';
+};
 add_filter('login_redirect', 'admin_default_page', 10, 3);
 ?>

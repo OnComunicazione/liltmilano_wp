@@ -8,6 +8,10 @@ a:hover {
   text-decoration: none !important;
 }
 
+#wp-admin-bar-root-default, #wp-admin-bar-search {
+  display: none !important;
+}
+
 .marker {
   background-image: url('./images/pin.svg');
   background-size: contain;
@@ -380,7 +384,8 @@ input[type=button].ninja-forms-field.nf-element, .formBtn {
   transition: 0.2s;
 }
 input[type=button].ninja-forms-field.nf-element:hover, .formBtn:hover {
-  background-color: #c20212
+  background-color: #c20212;
+  color: #fff;
 }
 .label-above .nf-field-label {
   margin-bottom: 5px !important;

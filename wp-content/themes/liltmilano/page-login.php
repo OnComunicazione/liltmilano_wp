@@ -9,6 +9,8 @@
  * Template Name: Login
  */
 
+if (is_user_logged_in()) wp_redirect(home_url() . '/iscrizioni');
+
 $user = $_GET['username'];
 $pw = $_GET['password'];
 if (isset($user) && isset($pw)) {
