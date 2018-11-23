@@ -1,6 +1,6 @@
 <?php
 
-function get_submissions($page=1, $per_page=15) {
+function get_submissions($spazio_lilt, $page=1, $per_page=15) {
   if ($page < 1) $page = 1;
   if (!isset($page)) $page = 1;
   if (!isset($per_page)) $per_page = 15;
@@ -10,7 +10,7 @@ function get_submissions($page=1, $per_page=15) {
   $filtered_subs = array();
 
   foreach($allSubs_model as $key => $submission_model) {
-    if ($submission_model->get_field_value('spazio_lilt_1542724594218') === 'milano-caterinadaforli') {
+    if ($submission_model->get_field_value('spazio_lilt_1542724594218') === $spazio_lilt) {
       array_push($filtered_subs, $submission_model);
     }
   }
@@ -45,6 +45,46 @@ function get_submissions($page=1, $per_page=15) {
   );
 
 }
+
+
+function get_submissions_all($spazio_lilt) {
+
+  $field_models = Ninja_Forms()->form( 2 )->get_fields();
+  $allSubs_model = Ninja_Forms()->form( 2 )->get_subs();
+  $filtered_subs = array();
+
+  foreach($allSubs_model as $key => $submission_model) {
+    if ($submission_model->get_field_value('spazio_lilt_1542724594218') === $spazio_lilt) {
+      array_push($filtered_subs, $submission_model);
+    }
+  }
+
+  $fields = array();
+  $fields_label = array();
+  $submissions = array();
+
+  // loop per prendere gli id e le label dei campi
+  foreach($field_models as $key => $value) {
+    array_push($fields, $value->get_setting('key'));
+    array_push($fields_label, $value->get_setting('label'));
+  }
+
+  // loop per tirare giu tutte le submissions
+  foreach($filtered_subs as $key => $submission_model) {
+    $obj1 = new \stdClass;
+    foreach ($fields_label as $key => $value) {
+      if ($value !== 'PRENOTA' && $value !== 'Privacy Policy' && $value !== 'Spedito') {
+        $obj1->$value = $submission_model->get_field_value($fields[$key]);
+      }
+    }
+    array_push($submissions, $obj1);
+  }
+
+  return $submissions;
+
+}
+
+
 
 // function schedulingSend() {
 //   $timestamp = wp_next_scheduled( 'parteMail' );

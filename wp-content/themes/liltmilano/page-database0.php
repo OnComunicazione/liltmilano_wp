@@ -27,7 +27,7 @@ $labels['1'] = 'Sì';
 get_header(); ?>
 
 <div class="container-fluid nopad db">
-    <a href="<?php echo bloginfo('url') ?>">
+    <a href="./">
       <div class="logo logo-home"></div>
     </a>
     <div class="row">
