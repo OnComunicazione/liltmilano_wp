@@ -19,14 +19,15 @@ $tel = get_field('telefono');
           <div class="footer-left ragionesociale">
             © 2015 Lega Italiana per la Lotta contro i Tumori - Via Venezian, 1 20133 Milano
           </div>
-          
-          <div class="footer-left righetta"></div>
-          <a href="tel:<?php echo $tel ?>">
-            <div class="footer-left numero">
-              <div class="numero-icon"></div>
-              <?php echo $tel ?>
-            </div>
-          </a>
+          <?php if ($tel) : ?>
+            <div class="footer-left righetta"></div>
+            <a href="tel:<?php echo $tel ?>">
+              <div class="footer-left numero">
+                <div class="numero-icon"></div>
+                <?php echo $tel; ?>
+              </div>
+            </a>
+          <?php endif; ?>
 
           <?php if ($yt) echo "<a href='" . $yt . "'target='_blank'><div class='social-icon yt'></div></a>"; ?>
           <?php if ($ig) echo "<a href='" . $ig . "'target='_blank'><div class='social-icon ig'></div></a>"; ?>
@@ -38,6 +39,21 @@ $tel = get_field('telefono');
       </div>
 
   </div>
+
+  <script>
+  var scroll = new SmoothScroll('a[href*="#"]');
+  var geojson = {
+    type: 'FeatureCollection',
+    features:
+      <?php
+      echo get_all_JSON_spazi();
+     ?>
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/js/swiper.min.js"></script>
+  <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
+  <script src="<?php echo get_stylesheet_directory_uri(). '/script.js' ?>"></script>
 
 <?php wp_footer(); ?>
 

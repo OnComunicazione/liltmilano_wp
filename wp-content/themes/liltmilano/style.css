@@ -337,12 +337,17 @@ h1{
   padding-bottom: 5px !important;
   background-color: transparent;
   border-radius: 0;
-  border-color: #3c3c3c;
+  border-color: rgba(0, 0, 0, 0.46);
+}
+.listselect-wrap .ninja-forms-field.nf-element {
+  margin-left: -7px;
+  width: 102%;
 }
 .listselect-wrap .nf-field-element {
   margin-top: 5px !important;
   padding-bottom: 5px;
   border-bottom: 1px solid;
+  border-color: rgba(0, 0, 0, 0.46);
 }
 input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     background-color: transparent !important;
@@ -376,6 +381,7 @@ input[type=button].ninja-forms-field.nf-element:hover, .formBtn:hover {
   margin-bottom: 10px;
 } */
 .nf-field-label label{
+  font-weight: 500 !important;
   font-size: 15px;
   letter-spacing: 0.02em;
   position: absolute;
