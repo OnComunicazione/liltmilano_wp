@@ -2,7 +2,6 @@
 $id_spazio = get_field('spazio_lilt')->ID;
 $campi_spazio = get_spazio($id_spazio);
 $news = get_articles($id_spazio);
-// print_r($campi_articolo);
 ?>
 
 <div class="row news">

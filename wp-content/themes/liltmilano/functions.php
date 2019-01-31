@@ -123,12 +123,11 @@ function get_submissions_all($spazio_lilt) {
 
 
 // query per un singolo spazio lilt
-function get_spazio($id_spazio) {
+function get_spazio($id_spaz) {
   $args = array(
   	   'post_type' => 'spazio_lilt',
-       'post' => $id_spazio
+       'p' => $id_spaz
   );
-
   $query = new WP_Query( $args );
   $obj = array();
 
@@ -149,8 +148,8 @@ function get_spazio($id_spazio) {
   endwhile;
 
   wp_reset_query();
-  // wp_reset_post_data();
   return $obj;
+  // wp_reset_post_data();
 };
 
 // query per tutti gli spazi lilt in formato json (da usare nelle mappe)
@@ -225,8 +224,25 @@ function get_articles($id_spazio) {
   return $obj_to_return;
 };
 
-function my_login_redirect( $redirect_to, $request, $user ) {
-  PC::debug($redirect_to);
+// function my_login_redirect( $redirect_to, $request, $user ) {
+//   PC::debug($redirect_to);
+//   $user = wp_get_current_user();
+//     //is there a user to check?
+//     if (isset($user->roles) && is_array($user->roles)) {
+//         //check for subscribers
+//         if (in_array('subscriber', $user->roles)) {
+//             // redirect them to another URL, in this case, the homepage
+//             $redirect_to =  home_url() . '/iscrizioni';
+//
+//             return $redirect_to;
+//         }
+//     }
+//
+//     return $redirect_to;
+// }
+
+function my_login_redirect(  ) {
+  // PC::debug($redirect_to);
   $user = wp_get_current_user();
     //is there a user to check?
     if (isset($user->roles) && is_array($user->roles)) {
