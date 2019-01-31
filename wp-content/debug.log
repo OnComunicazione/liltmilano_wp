@@ -54,3 +54,5 @@
 [31-Jan-2019 14:28:37 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): Connection refused in /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-includes/wp-db.php on line 1531
 [31-Jan-2019 14:30:13 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): Connection refused in /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-includes/wp-db.php on line 1531
 [31-Jan-2019 14:30:14 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): Connection refused in /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-includes/wp-db.php on line 1531
+[31-Jan-2019 15:05:07 UTC] [mailgun] Got unknown Content-Type: 
+[31-Jan-2019 15:08:14 UTC] [mailgun] Got unknown Content-Type: 

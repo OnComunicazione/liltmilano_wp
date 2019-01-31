@@ -9,7 +9,7 @@ $tel = get_field('telefono');
 
 <div class="footer">
         <div class="row nomargin" style="margin-bottom: 23px">
-          <a href="./spazi-lilt.html" target="_blank" class="footer-left ragionesociale linkmenu" style="margin-left: 0">Spazi LILT</a>
+          <a href="<?php echo get_site_url(); ?>/spazi-lilt" class="footer-left ragionesociale linkmenu" style="margin-left: 0">Spazi LILT</a>
           <div class="footer-left righetta"></div>
           <a href="https://www.legatumori.mi.it/" target="_blank" class="footer-left ragionesociale linkmenu">LILT Milano</a>
           <div class="footer-left righetta"></div>
