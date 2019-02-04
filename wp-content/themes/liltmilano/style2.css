@@ -378,8 +378,76 @@ h1.title-paragrafo.white {
 .m2 {
   background-image: url('./images/m2.png');
 }
+.m5 {
+  background-image: url('./images/m5.png');
+}
 .fs {
   background-image: url('./images/fs.png');
+}
+.trenord {
+  background-image: url('./images/trenord.jpg');
+}
+.zeta {
+  display: inline-block;
+  margin-right: 28px;
+  height: 10px;
+  width: 36px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.z202 {
+  background-image: url('./images/z202.svg');
+}
+.z208 {
+  background-image: url('./images/z208.svg');
+}
+.bus {
+  display: inline-block;
+  margin-right: 28px;
+  height: 29px;
+  width: 29px;
+  border-radius: 4px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.isub {
+  display: inline-block;
+  margin-right: 28px;
+  height: 25px;
+  width: 25px;
+  border-radius: 4px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.b67 {
+  background-image: url('./images/67.svg');
+}
+.b37 {
+  background-image: url('./images/37.svg');
+}
+.b33 {
+  background-image: url('./images/33.svg');
+}
+.b95 {
+  background-image: url('./images/95.svg');
+}
+.b89 {
+  background-image: url('./images/89.svg');
+}
+.b3 {
+  background-image: url('./images/3.svg');
+}
+.b15 {
+  background-image: url('./images/15.svg');
+}
+.b79 {
+  background-image: url('./images/79.svg');
+}
+.sub {
+  background-image: url('./images/sub.png');
 }
 
 .paragrafo-metro {
