@@ -2,14 +2,8 @@
 $titolo = get_the_title();
 $descrizione = get_field('descrizione');
 $id_spazio = get_field('spazio_lilt')->ID;
-$esami = get_terms(array(
-   'post' => $id_spazio,
-   'taxonomy' => 'esame'
-));
-$visite = get_terms(array(
-   'post' => $id_spazio,
-   'taxonomy' => 'visita'
-));
+$esami = get_the_terms($id_spazio, 'esame');
+$visite = get_the_terms($id_spazio, 'visita');
 $campi_spazio = get_spazio($id_spazio);
 ?>
 

@@ -56,3 +56,29 @@
 [31-Jan-2019 14:30:14 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): Connection refused in /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-includes/wp-db.php on line 1531
 [31-Jan-2019 15:05:07 UTC] [mailgun] Got unknown Content-Type: 
 [31-Jan-2019 15:08:14 UTC] [mailgun] Got unknown Content-Type: 
+[04-Feb-2019 11:13:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function add_filters() in /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-content/themes/liltmilano/functions.php:231
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-settings.php(426): include()
+#1 /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-config.php(93): require_once('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-load.php(37): require_once('/Applications/X...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-blog-header.php(13): require_once('/Applications/X...')
+#4 /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/index.php(17): require('/Applications/X...')
+#5 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-content/themes/liltmilano/functions.php on line 231
+[04-Feb-2019 11:13:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function add_filters() in /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-content/themes/liltmilano/functions.php:235
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-settings.php(426): include()
+#1 /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-config.php(93): require_once('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-load.php(37): require_once('/Applications/X...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-admin/admin-ajax.php(22): require_once('/Applications/X...')
+#4 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-content/themes/liltmilano/functions.php on line 235
+[04-Feb-2019 11:13:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function add_filters() in /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-content/themes/liltmilano/functions.php:235
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-settings.php(426): include()
+#1 /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-config.php(93): require_once('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-load.php(37): require_once('/Applications/X...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-blog-header.php(13): require_once('/Applications/X...')
+#4 /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/index.php(17): require('/Applications/X...')
+#5 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-content/themes/liltmilano/functions.php on line 235

@@ -62,23 +62,17 @@ if (document.getElementById('map')) {
 
   // add markers to map
   geojson.features.forEach(function(marker) {
-
-
-    console.log(marker);
     // create a HTML element for each feature
     var el = document.createElement('div');
     el.className = 'marker';
     el.onclick = function(e) {
       clickFunction(e, marker);
     };
-
-
-  // make a marker for each feature and add to the map
-  new mapboxgl.Marker(el)
-      .setLngLat(marker.geometry.coordinates)
-      .addTo(map);
+    // make a marker for each feature and add to the map
+    new mapboxgl.Marker(el)
+        .setLngLat(marker.geometry.coordinates)
+        .addTo(map);
   });
-
 
   map.on('load', function() {
     map.getCanvas().style.cursor = 'default';
@@ -120,7 +114,7 @@ if (document.getElementById('map')) {
         },'')
       + `</div>`
     }, '')
-    document.getElementById('loop-spazi').innerHTML = loop
+    if (document.getElementById('loop-spazi')) document.getElementById('loop-spazi').innerHTML = loop
   }
 
   initPaginaMappa();

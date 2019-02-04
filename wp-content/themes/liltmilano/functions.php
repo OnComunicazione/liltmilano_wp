@@ -165,14 +165,8 @@ function get_all_JSON_spazi() {
   while ( $query->have_posts() ) :
   	$query->the_post();
     $coords = get_field('coordinate');
-    $esami = get_terms(array(
-       'post' => get_the_ID(),
-       'taxonomy' => 'esame'
-    ));
-    $visite = get_terms(array(
-       'post' => get_the_ID(),
-       'taxonomy' => 'visita'
-    ));
+    $esami = get_the_terms(get_the_ID(), 'esame');
+    $visite = get_the_terms(get_the_ID(), 'visita');
     $obj['type'] = 'Feature';
     $obj['properties'] = array(
       'label' => get_field('indirizzo'),
@@ -224,6 +218,59 @@ function get_articles($id_spazio) {
   return $obj_to_return;
 };
 
+
+add_filter( 'ninja_forms_localize_field', function( $field ){
+  PC::debug('ciccio');
+  if( 'spazio_lilt_1542724594218' == $field[ 'settings' ][ 'key' ] ){
+    // Change the `default_value` setting of the checkbox field.
+    $field[ 'settings' ][ 'selected' ] = 'sesto-fratellicairoli';
+  }
+  return $field;
+});
+
+add_filter( 'ninja_forms_render_options', function( $options, $settings ) {
+  if ($settings[ 'key' ] == 'spazio_lilt_1542724594218') {
+    global $post;
+    $page_slug = $post->post_name;
+    PC::debug($page_slug);
+    $default;
+    if ($page_slug == 'sesto-san-giovanni') {
+      $default = 'sesto-fratellicairoli';
+    }
+    if ($page_slug == 'novate-milanese') {
+      $default = 'novate-manzoni';
+    }
+    if ($page_slug == 'monza') {
+      $default = 'monza-sangottardo';
+    }
+    if ($page_slug == 'milano-neera') {
+      $default = 'milano-neera';
+    }
+    if ($page_slug == 'milano-vigano') {
+      $default = 'milano-vigano';
+    }
+    if ($page_slug == 'milano-caterina-da-forli') {
+      $default = 'milano-caterinadaforli';
+    }
+    if ($page_slug == 'cernusco-sul-naviglio') {
+      $default = 'cernusco-fatebenefratelli';
+    }
+    foreach( $options as &$option ) {
+      if( $default == $option[ 'value' ] ){
+        $option[ 'selected' ] = true;
+      } else {
+        $option[ 'selected' ] = false;
+      }
+    }
+    return $options;
+  }
+  if ($settings[ 'key' ] == 'tipologia_di_visita_1541688553029') {
+    PC::debug('visiteeee');
+    return $options;
+  }
+
+}, 10, 2 );
+
 // function my_login_redirect( $redirect_to, $request, $user ) {
 //   PC::debug($redirect_to);
 //   $user = wp_get_current_user();
@@ -254,14 +301,11 @@ function my_login_redirect(  ) {
             return $redirect_to;
         }
     }
-
     return $redirect_to;
 }
 
 add_filter( 'edit_profile_url', 'my_login_redirect' );
 add_filter( 'login_redirect', 'my_login_redirect' );
 add_filter( 'logout_redirect', 'my_login_redirect' );
-
-
 
 ?>
