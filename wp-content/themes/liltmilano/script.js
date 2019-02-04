@@ -1,6 +1,6 @@
 mapboxgl.accessToken = "pk.eyJ1IjoibGlzaXJpIiwiYSI6ImNqb2VmbTlobTJvNmsza28xbjQzNHJkdm4ifQ.4RaiJilU7hEkVwUzBziLcg";
-var center = [9.21336,45.48297]
-var zoom = 10.7
+var center = [9.22,45.505]
+var zoom = 10.2
 
 // se esiste una mappa nella pagina avvio tutte le sue funzioni
 if (document.getElementById('map')) {
