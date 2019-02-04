@@ -11,5 +11,17 @@
  */
 
 get_header(); ?>
-
-<?php get_footer();
+<div class="pagenotfoundcontainer">
+  <a href="./">
+  <div class="logo404">
+  </div>
+  </a>
+  <div class="testo404container">
+    <p class="testo404">
+      Pagina non trovata
+    </p>
+      <a href="./">
+    <button type="button" class="btn btn-danger backhome404">Torna alla Home</button>
+  </a>
+  </div>
+</div>
