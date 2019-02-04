@@ -268,8 +268,9 @@ add_filter( 'ninja_forms_render_options', function( $options, $settings ) {
     PC::debug('visiteeee');
     return $options;
   }
-
 }, 10, 2 );
+
+
 
 // function my_login_redirect( $redirect_to, $request, $user ) {
 //   PC::debug($redirect_to);
