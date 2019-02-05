@@ -8,7 +8,7 @@ get_header(); ?>
 
   <div class="row first-row" style="min-height: 88vh;">
           <div class="col-lg-7 left-col" style="padding-bottom: 27px">
-            <a href="./">
+            <a href="<?php echo bloginfo('url') ?>">
               <div class="logo logo-single"></div>
             </a>
 

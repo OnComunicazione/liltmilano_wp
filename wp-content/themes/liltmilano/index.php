@@ -16,7 +16,7 @@ get_header(); ?>
 <div class="container-fluid">
 
   <div class="row first-row">
-      <div class="col-lg-7 left-col" style="padding-bottom: 27px">
+      <div class="col-lg-7 left-col hero" style="padding-bottom: 27px">
         <a href="./">
           <div class="logo logo-home"></div>
         </a>

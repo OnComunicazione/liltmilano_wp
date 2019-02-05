@@ -17,14 +17,20 @@ $labels = array();
 $labels['milano-caterinadaforli'] = 'Viale Caterina da Forlì';
 $labels['milano-neera'] = 'Via Neera';
 $labels['milano-vigano'] = 'Via Viganò';
-$labels['brugherio-lombardia'] = 'Brugherio - Viale Lombardia';
+// $labels['brugherio-lombardia'] = 'Brugherio - Viale Lombardia';
 $labels['cernusco-fatebenefratelli'] = 'Cernusco - Via Fatebenefratelli';
 $labels['novate-manzoni'] = 'Novate - Via Manzoni';
+$labels['monza-sangottardo'] = 'Monza - Via San Gottardo';
 $labels['sesto-fratellicairoli'] = 'Sesto - Via Fratelli Cairoli';
 $labels['0'] = 'No';
 $labels['1'] = 'Sì';
 
 get_header(); ?>
+<?php
+foreach ($submissions as $sub) {
+    unset($sub->Spedito);
+};
+?>
 
 <div class="container-fluid nopad db">
     <a href="<?php echo bloginfo('url') ?>">

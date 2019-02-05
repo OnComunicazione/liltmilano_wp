@@ -82,3 +82,5 @@ Stack trace:
 #4 /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/index.php(17): require('/Applications/X...')
 #5 {main}
   thrown in /Applications/XAMPP/xamppfiles/htdocs/liltmilano_wp/wp-content/themes/liltmilano/functions.php on line 235
+[05-Feb-2019 11:22:48 UTC] [mailgun] Got unknown Content-Type: 
+[05-Feb-2019 11:22:49 UTC] [mailgun] Got unknown Content-Type: 
