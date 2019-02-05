@@ -327,6 +327,10 @@ h1{
   font-size: 17px;
   font-weight: 600;
   margin-bottom: 46px;
+  padding-bottom: 10px;
+  margin-top: 5px;
+  display: inline-block;
+  float: left;
 }
 
 .nf-form-fields-required {
@@ -468,11 +472,12 @@ select, input[type="color" i][list] {
 .success-icon-form {
   width: 35px;
   height: 35px;
-  margin-top: -5px;
   margin-right: 20px;
   background-image: url('./images/check.svg');
   background-size: contain;
   background-repeat: no-repeat;
+  display: inline-block;
+  float: left;
 }
 
 .labelCheckbox {
