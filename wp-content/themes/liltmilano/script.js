@@ -11,7 +11,7 @@ if (document.getElementById('map')) {
     zoom: zoom,
     minZoom: 6,
     center: center
-  })
+  });
 
   var pointClicked = false;
 
@@ -94,7 +94,6 @@ if (document.getElementById('map')) {
         zoom: zoom,
       });
     }, 150)
-    map.resize()
   }
 
   // creo loop spazi nella pagina Mappa
@@ -114,7 +113,7 @@ if (document.getElementById('map')) {
         },'')
       + `</div>`
     }, '')
-    if (document.getElementById('loop-spazi')) document.getElementById('loop-spazi').innerHTML = loop
+    if (document.getElementById('loop-spazi')) document.getElementById('loop-spazi').innerHTML = loop;
   }
 
   initPaginaMappa();
@@ -160,4 +159,5 @@ var mySwiper = new Swiper ('.swiper-container', {
 jQuery(document).ready(function() {
   jQuery(document).on('nfFormReady',initForm);
   jQuery(document).on('nfFormSubmitResponse',initForm);
+  if (map) map.resize();
 })

@@ -381,7 +381,7 @@ input[type=button].ninja-forms-field.nf-element, .formBtn {
   padding: 13px;
   width: 100%;
   margin-top: 2vh;
-  margin-bottom: 5vh;
+  margin-bottom: 7vh;
   text-align: center;
   letter-spacing: 0.1em;
   cursor: pointer;
@@ -416,8 +416,9 @@ input[type=button].ninja-forms-field.nf-element:hover, .formBtn:hover {
   font-size: 13px !important;
 }
 .label-right .checkbox-wrap .nf-field-label {
-    width: 100% !important;
+    width: 5% !important;
 }
+
 #nf-label-field-11 {
   margin-top: 2px;
 }
@@ -430,13 +431,20 @@ select, input[type="color" i][list] {
 
 .nf-field-description {
   margin-top: 2px;
+  margin-right: 28% !important;
+  display: inline-flex;
 }
 .nf-field-description a {
   color: #1f1f1f;
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 0.01em;
+  transition: .2s;
 }
+.nf-field-description a:hover {
+  opacity: 0.7;
+}
+
 
 .nascondi {
   display: none;

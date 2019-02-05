@@ -193,18 +193,32 @@ function get_all_JSON_spazi() {
 };
 
 // query per gli articoli di uno spazio
-function get_articles($id_spazio) {
-  $args = array(
-  	   'post_type' => 'post',
-       // 'post__in' => $id_spazio,
-       'meta_query' => array(
-         array(
-           'key' => 'spazio_lilt',
-           'value' => $id_spazio,
-           'compare' => 'LIKE'
+function get_articles($id_spazio = null) {
+  if ($id_spazio) {
+    $args = array(
+    	   'post_type' => 'post',
+         // 'post__in' => $id_spazio,
+         'meta_query' => array(
+           array(
+             'key' => 'spazio_lilt',
+             'value' => $id_spazio,
+             'compare' => 'LIKE'
+           )
          )
-       )
-  );
+    );
+  } else {
+    $args = array(
+    	   'post_type' => 'post',
+         'meta_query' => array(
+           array(
+             'key' => 'home',
+             'value' => true,
+             'compare' => 'LIKE'
+           )
+         )
+    );
+  }
+
   $query = new WP_Query( $args );
   $obj = array();
   $obj_to_return = array();
@@ -212,6 +226,7 @@ function get_articles($id_spazio) {
   	$query->the_post();
     $obj['immagine'] = get_field('immagine_banner');
     $obj['titolo'] = get_field('testo_banner');
+    $obj['url'] = get_field('link_banner');
     array_push($obj_to_return, $obj);
   endwhile;
   wp_reset_query();

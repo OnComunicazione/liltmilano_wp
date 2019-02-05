@@ -11,13 +11,29 @@ $news = get_articles($id_spazio);
 
                 <?php foreach ($news as $single_new) {  ?>
 
+
+
                   <div class="swiper-slide news-image <?php if ($single_new['titolo']) echo 'overlay' ?>" style="background-image:url(<?php echo $single_new['immagine'] ?>)">
                     <?php if ($single_new['titolo']) :  ?>
-                      <h1 class="news-title">
-                        <?php echo $single_new['titolo'] ?>
-                      </h1>
+
+                      <?php if ($single_new['url']) :  ?>
+                      <a href="<?php echo $single_new['url'] ?>">
+                        <div class="overlayLink">
+                      <?php endif; ?>
+
+                        <h1 class="news-title">
+                          <?php echo $single_new['titolo'] ?>
+                        </h1>
+
+                      <?php if ($single_new['url']) :  ?>
+                        </div>
+                      </a>
+                      <?php endif; ?>
+
                     <?php endif; ?>
                   </div>
+
+
 
                 <?php }; ?>
 
