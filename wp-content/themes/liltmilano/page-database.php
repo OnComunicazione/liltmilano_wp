@@ -27,9 +27,15 @@ $labels['1'] = 'Sì';
 
 get_header(); ?>
 <?php
+// function array_except($array, $keys) {
+//   return array_diff_key($array, array_flip((array) $keys));
+// };
+
 foreach ($submissions as $sub) {
     unset($sub->Spedito);
 };
+
+// $submissions = array_except($submissions, ['Spedito']);
 ?>
 
 <div class="container-fluid nopad db">
@@ -48,9 +54,12 @@ foreach ($submissions as $sub) {
 
         <?php
         foreach ($submissions[0] as $key=>$value) {
-            echo '
-            <th class="city">'.$key.'</th>
-            ';
+            if (!$key) {echo '';}
+            else {
+              echo '
+              <th class="city">'.$key.'</th>
+              ';
+            }
         };
         ?>
 
@@ -64,9 +73,9 @@ foreach ($submissions as $sub) {
             <tr>
               <td></td>';
               foreach ($sub as $key=>$value) {
-                if ($key === 'Spazio LILT' || $key === 'Spedito')  {echo '<td>' . $labels[$value] .'</td>';}
+                if ($key === 'Spazio LILT')  {echo '<td>' . $labels[$value] .'</td>';}
+                elseif (!$key) {echo '';}
                 else {echo '<td>' . $value .'</td>';};
-
               };
             echo '<td></td>
             </tr>

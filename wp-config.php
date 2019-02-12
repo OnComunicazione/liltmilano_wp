@@ -42,6 +42,9 @@ define('DB_CHARSET', 'utf8');
 /** Il tipo di Collazione del Database. Da non modificare se non si ha idea di cosa sia. */
 define('DB_COLLATE', '');
 
+define( 'WP_HOME', 'http://127.0.0.1/liltmilano_wp' );
+define( 'WP_SITEURL', 'http://127.0.0.1/liltmilano_wp' );
+
 /**#@+
  * Chiavi Univoche di Autenticazione e di Salatura.
  *
